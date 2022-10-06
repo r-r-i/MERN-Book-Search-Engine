@@ -27,8 +27,10 @@ app.get('/', (req, res) => {
 });
 
 // app.use(routes);
+
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
+  // Apply middleware
   server.applyMiddleware({ app });
   
   db.once('open', () => {
