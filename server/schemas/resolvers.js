@@ -7,7 +7,7 @@ const resolvers = {
         // get single user
         user: async (parent, { username }) => {
             return User.findOne({ username }).populate('savedBooks')
-        }
+        },
     },
     Mutation: {
         // create user
