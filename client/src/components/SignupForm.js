@@ -13,12 +13,9 @@ const SignupForm = () => {
     email: '',
     password: '',
   });
-
-  // set state for form validation
-  const [validated] = useState(false);
-  // set state for alert
-  const [showAlert, setShowAlert] = useState(false);
-
+  
+  const [validated] = useState(false); // set state for form validation
+  const [showAlert, setShowAlert] = useState(false); // set state for alert
   const [createUser] = useMutation(ADD_USER);
 
   // update state based on form input changes
@@ -30,7 +27,6 @@ const SignupForm = () => {
       [name]: value,
     });
   };
-  
 
   // submit form
   const handleFormSubmit = async (event) => {
