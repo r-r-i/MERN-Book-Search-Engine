@@ -30,6 +30,7 @@ const SignupForm = () => {
       [name]: value,
     });
   };
+  
 
   // submit form
   const handleFormSubmit = async (event) => {
@@ -47,11 +48,11 @@ const SignupForm = () => {
     }
   };
 
-  setFormState({
-    username: '',
-    email: '',
-    password: '',
-  });
+  // setFormState({
+  //   username: '',
+  //   email: '',
+  //   password: '',
+  // });
 
 
   return (
