@@ -35,16 +35,22 @@ const SignupForm = () => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
-
+    
+    const form = event.currentTarget;
+    if(form.checkValidity() === false) {
+      console.log("Form doesn't have everything")
+      event.preventDefault();
+      event.stopPropagation();
+    }
     try {
       const { data } = await createUser({
-        variables: { ...formState },
+        variables: { ...formState }
       });
-
+      
       Auth.login(data.addUser.token);
-    } catch (e) {
-      console.error(e);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true)
     }
   };
 
