@@ -10,6 +10,7 @@ const resolvers = {
                 const userData = User.findOne({ _id: context.user._id})
                 // versionKey property set on each document when first created by Mongoose
                 .select ('-__v -password')
+                console.log(userData)
                 return userData;
             }
             throw new AuthenticationError('You need to be logged in!')
